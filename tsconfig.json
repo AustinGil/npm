@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "lib": ["DOM", "ESNext"],
+    "allowJs": true,
+    "checkJs": true,
+    "alwaysStrict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "target": "es2019",
+    "strict": true,
+    "paths": {
+      "~/*": ["./app/*"]
+    },
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "resolveJsonModule": true
+  },
+  "files": ["src/main.js"],
+  "exclude": ["node_modules"],
+  "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx"]
+}

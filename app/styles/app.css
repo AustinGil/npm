@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #ca1e49;
+  --color-secondary: #1796bc;
+  --color-light: #fcfbfb;
+}
+
+@layer base {
+  html {
+    accent-color: var(--color-primary);
+    background-color: var(--color-light);
+    background-image: url('/img/bg.svg');
+    background-size: 12rem;
+  }
+  a {
+    color: var(--color-primary);
+  }
+  h1 {
+    @apply text-5xl;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+  input,
+  select,
+  textarea,
+  button {
+    @apply border-2 rounded p-2;
+  }
+  svg:where(:not([width])) {
+    width: 100%;
+  }
+  svg:where(:not([height])) {
+    height: 100%;
+  }
+  [role="banner"] a {
+    color: var(--color-light);
+  }
+}
+
+@layer components {
+  .btn {
+    @apply border-primary px-3 text-white bg-primary transition-all hover:border-rose-700 hover:bg-rose-700 focus:border-rose-700 focus:bg-rose-700;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+}
+
+.grid-area-1\/1 {
+  grid-area: 1/1;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.card :where(a:not(.static), button, input, select, textarea) {
+  position: relative;
+}
+
+.sort-direction-toggle:focus-within {
+  outline-width: 1px;
+  outline-style: auto;
+  outline-color: Highlight;
+  outline-color: -webkit-focus-ring-color;
+}
+.sort-direction-toggle .icon--chevron-down {
+  display: none;
+}
+.sort-direction-toggle input:checked ~ .icon--chevron-down {
+  display: unset;
+}
+.sort-direction-toggle input:checked ~ .icon--chevron-up {
+  display: none;
+}
