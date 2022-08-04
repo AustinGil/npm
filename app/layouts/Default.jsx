@@ -24,6 +24,13 @@ export default ({ title = '', className, ...props }) => {
               <p>Neighborhood Pet Manager</p>
             </span>
           </NavLink>
+
+          <NavLink
+            to="/create"
+            className="rounded-full p-1 bg-primary"
+          >
+            <Svg label="Add a new pet" icon="plus" className="text-3xl" />
+          </NavLink>
         </nav>
       </header>
       <main

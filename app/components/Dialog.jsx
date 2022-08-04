@@ -83,7 +83,6 @@ const Dialog = ({ toggle, id = '', children }) => {
         focusable[0].focus();
       } else {
         const focusedItemIndex = focusable.indexOf(document.activeElement);
-        console.log(focusedItemIndex, event);
         if (event.shiftKey && focusedItemIndex <= 0) {
           focusable.at(-1).focus();
         }
