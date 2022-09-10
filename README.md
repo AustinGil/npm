@@ -1,6 +1,21 @@
-# Welcome to Remix!
+# Neighborhood Pet Manager
 
-- [Remix Docs](https://remix.run/docs)
+Let's build a full-stack web application for managing all the pets in your neighborhood. This is the repo to follow along with [a tutorial series](https://www.youtube.com/watch?v=wqyHGQlZcws) where we'll learn how to combine these great tools:
+
+- [Remix](https://remix.run/docs)
+- [Prisma](https://www.prisma.io/docs/)
+- [Postgres](https://www.postgresql.org/)
+
+You can catch the series on the Linode YouTube channel here: https://www.youtube.com/watch?v=wqyHGQlZcws
+
+## Prerequisites
+
+This is not a web dev 101 course. You should already be familiar with Git, Node, HTML, JavaScript, and React. You also will want to have these installed on your machine:
+
+- [Git](https://git-scm.com/)
+- [Node](https://nodejs.org/en/)
+- A code editor like [VS Code](https://code.visualstudio.com/)
+- A database visualizer like [DBeaver](https://dbeaver.io/) (Optional)
 
 ## Development
 
@@ -12,44 +27,8 @@ npm run dev
 
 This starts your app in development mode, rebuilding assets on file changes.
 
-## Deployment
-
-First, build your app for production:
+You'll also need a Postgres database running. If you're comfortable with docker, you can get a local instance running locally with this command:
 
 ```sh
-npm run build
+docker run -d --name=postgres -p 5432:5432 -e POSTGRES_PASSWORD=password postgres
 ```
-
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
-
-- `build/`
-- `public/build/`
-
-### Using a Template
-
-When you ran `npx create-remix@latest` there were a few choices for hosting. You can run that again to create a new project, then copy over your `app/` folder to the new project that's pre-configured for your target server.
-
-```sh
-cd ..
-# create a new project, and pick a pre-configured host
-npx create-remix@latest
-cd my-new-remix-app
-# remove the new project's app (not the old one!)
-rm -rf app
-# copy your app over
-cp -R ../my-old-remix-app/app app
-```
-
-Example local DB with Docker: `docker run -d --name=postgres -p 5432:5432 -e POSTGRES_PASSWORD=password postgres`
