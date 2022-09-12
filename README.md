@@ -32,3 +32,19 @@ You'll also need a Postgres database running. If you're comfortable with docker,
 ```sh
 docker run -d --name=postgres -p 5432:5432 -e POSTGRES_PASSWORD=password postgres
 ```
+
+## Got Issues?
+
+Each chapter corresponds with a specific [tag](https://github.com/AustinGil/npm/tags). I've named them with a very helpful system:
+
+1. Woof!
+2. Meow!
+3. Chirp!
+
+To reset your project to a specific tag, you can use a Git reset:
+
+```sh
+git reset --hard tagname
+```
+
+Still having issues? Feel free to [reach out to me on Twitter](https://twitter.com/heyAustinGil)
