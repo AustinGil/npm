@@ -5,6 +5,7 @@
   "license": "",
   "sideEffects": false,
   "scripts": {
+    "pg": "docker kill pg || true && docker run -d --rm --name pg -p 5432:5432 -e POSTGRES_PASSWORD=pass postgres && prisma migrate dev",
     "dev:css": "tailwindcss -w -i app/styles/app.css -o build/styles/app.css",
     "build:css": "tailwindcss -m -i app/styles/app.css -o build/styles/app.css",
     "build": "npm run build:css && remix build",
@@ -12,23 +13,26 @@
     "start": "remix-serve build"
   },
   "dependencies": {
-    "@prisma/client": "^4.1.0",
-    "@remix-run/node": "^1.6.4",
-    "@remix-run/react": "^1.6.4",
-    "@remix-run/serve": "^1.6.4",
-    "dotenv": "^16.0.1",
-    "qs": "^6.11.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "zod": "^3.17.3"
-  },
-  "devDependencies": {
-    "@remix-run/dev": "^1.6.4",
-    "@remix-run/eslint-config": "^1.6.4",
-    "concurrently": "^7.2.2",
-    "prisma": "^4.1.0",
-    "sqlite3": "^5.0.8",
-    "tailwindcss": "^3.1.6"
+    "@aws-sdk/client-s3": "^3.282.0",
+    "@aws-sdk/lib-storage": "^3.282.0",
+    "@prisma/client": "^4.11.0",
+    "@remix-run/dev": "^1.14.0",
+    "@remix-run/eslint-config": "^1.14.0",
+    "@remix-run/node": "^1.14.0",
+    "@remix-run/react": "^1.14.0",
+    "@remix-run/serve": "^1.14.0",
+    "@remix-run/web-file": "^3.0.2",
+    "aws-sdk": "^2.1313.0",
+    "busboy": "^1.6.0",
+    "concurrently": "^7.6.0",
+    "dotenv": "^16.0.3",
+    "prisma": "^4.11.0",
+    "qs": "^6.11.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sqlite3": "^5.1.4",
+    "tailwindcss": "^3.2.7",
+    "zod": "^3.21.4"
   },
   "engines": {
     "node": ">=14"

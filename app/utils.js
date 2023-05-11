@@ -51,6 +51,24 @@ export function debounce(func, delay, { leading } = {}) {
   };
 }
 
+const pluralRules = new Intl.PluralRules('en-US');
+/**
+ * @param {number} count 
+ * @param {string} singular 
+ * @param {string} plural 
+ */
+export function pluralize(count, singular, plural) {
+  const grammaticalNumber = pluralRules.select(count);
+  switch (grammaticalNumber) {
+    case 'one':
+      return singular;
+    case 'other':
+      return plural;
+    default:
+      throw new Error('Unknown: ' + grammaticalNumber);
+  }
+}
+
 const DEFAULT_PER_PAGE = 12;
 /**
  * @param {sring|URLSearchParams} search
